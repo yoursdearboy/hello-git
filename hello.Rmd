@@ -49,3 +49,23 @@ artists[xs,] |>
   gt::gt()
 ```
 
+# Best in 2000
+
+```{r}
+top_in_2000 <- modern |>
+  filter(date >= "2000-01-01") |>
+  filter(date < "2001-01-01")
+```
+
+```{r}
+top_in_2000 |>
+  count(artist) |>
+  arrange(-n)
+```
+
+```{r}
+top_in_2000 |>
+  filter(artist == "Soundtrack") |>
+  count(song) |>
+  arrange(-n)
+```
