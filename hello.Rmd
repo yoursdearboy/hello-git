@@ -1,0 +1,21 @@
+---
+title: "Hello"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+set.seed(166)
+xs <- sample(1:250, 25)
+xs
+```
+
+```{r}
+me <- median(xs)
+me
+```
+
+Median is `r me`.
