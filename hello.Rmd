@@ -35,5 +35,5 @@ Median is `r me`.
 
 ```{r}
 modern[xs, ] |>
-  gt::gt()
+  knitr::kable()
 ```
