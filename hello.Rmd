@@ -4,7 +4,21 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+library(readr)
+library(dplyr)
+
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+top <- read_csv("imdb.csv")
+head(top)
+```
+
+```{r}
+modern <- top |>
+  filter(year >= 2000)
+head(modern)
 ```
 
 ```{r}
@@ -15,7 +29,11 @@ xs
 
 ```{r}
 me <- median(xs)
-me
 ```
 
 Median is `r me`.
+
+```{r}
+modern[xs, ] |>
+  gt::gt()
+```
